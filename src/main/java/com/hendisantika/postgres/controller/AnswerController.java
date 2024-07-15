@@ -22,7 +22,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @RestController
-@RequestMapping("questions")
+@RequestMapping("answers")
 public class AnswerController {
 
     @Autowired
@@ -30,6 +30,11 @@ public class AnswerController {
 
     @Autowired
     private QuestionRepository questionRepository;
+
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello";
+    }
 
     @GetMapping("/{questionId}/answers")
     public List<Answer> getAnswersByQuestionId(@PathVariable Long questionId) {

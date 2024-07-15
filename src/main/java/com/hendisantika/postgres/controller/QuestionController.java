@@ -33,6 +33,10 @@ public class QuestionController {
         return questionRepository.findAll(pageable);
     }
 
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello";
+    }
 
     @PostMapping
     public Question createQuestion(@Valid @RequestBody Question question) {
